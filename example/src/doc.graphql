@@ -1,0 +1,5 @@
+query getProjects($limit: Int!) {
+  projects(filter: { pagination: { limit: $limit }, type: FEDERATION }) {
+    id
+  }
+}
