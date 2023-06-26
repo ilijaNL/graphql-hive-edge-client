@@ -48,7 +48,7 @@ interface OperationMap {
   [key: string]: OperationMapRecord;
 }
 
-function randomSampling(sampleRate: number) {
+function randomSampler(sampleRate: number) {
   if (sampleRate > 1 || sampleRate < 0) {
     throw new Error(`Expected usage.sampleRate to be 0 <= x <= 1, received ${sampleRate}`);
   }
@@ -151,13 +151,13 @@ export function createUsageCollector(options: {
     },
   });
 
-  const shouldInclude = randomSampling(options.sampleRate ?? 1.0);
+  const shouldIncludeFn = randomSampler(options.sampleRate ?? 1.0);
 
   return {
     collect(state, client) {
       const started_at = Date.now();
       return async function complete(result) {
-        if (!shouldInclude) {
+        if (!shouldIncludeFn()) {
           return;
         }
         const now = Date.now();
