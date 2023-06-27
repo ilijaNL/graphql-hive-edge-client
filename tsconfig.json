@@ -7,7 +7,7 @@
     "module": "commonjs",
     "composite": false,
     "declaration": true,
-    "declarationMap": true,
+    "declarationMap": false,
     "newLine": "lf",
     "outDir": "./lib",
     "pretty": true,

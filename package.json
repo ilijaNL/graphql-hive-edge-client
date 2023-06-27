@@ -1,11 +1,12 @@
 {
   "name": "graphql-hive-edge-client",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "GraphQL Hive edge client",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
     "./lib",
+    "README.md",
     "CHANGELOG.md"
   ],
   "scripts": {
